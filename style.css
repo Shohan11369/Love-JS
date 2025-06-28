@@ -1,49 +1,58 @@
 body {
   background: linear-gradient(
-      rgba(234, 196, 202, 0.6),
+      rgba(237, 208, 212, 0.6),
       rgba(117, 116, 115, 0.6)
     ),
     url("images/bg-love.jpg");
 
-  background-size: 88%;
+  background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   font-family: "Segoe UI", sans-serif;
   text-align: center;
-  /* padding-top: 80px;
-  padding-bottom: 100px; */
   margin: 0;
   overflow-x: hidden;
-  height: 90vh;
+  min-height: 100vh;
+  padding-top: 80px;
 }
 
 h1 {
-  font-size: 36px;
-  color: #ec0aa0;
-  font-weight: bold;
+  font-family: "Great Vibes", cursive;
+  font-size: 50px;
+  color: #a134cf;
+  font-weight: bolder;
   font-style: italic;
-  text-align: center;
-
   margin-bottom: 30px;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+p {
+  font-size: 40px;
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 40px;
+  color: rgb(251, 251, 249);
+  font-weight: bolder;
+  animation: fadeInZoom 2.5s ease-in-out;
 }
 
 button {
-  padding: 15px 35px;
+  padding: 10px 20px;
   font-size: 20px;
   margin: 20px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: bold;
+  animation: popIn 1.5s ease-in-out;
 }
 
 .yes {
   background-color: #5b9bdb;
   color: white;
 }
-
 .yes:hover {
   background-color: #ade0b8;
   color: black;
@@ -53,7 +62,6 @@ button {
   background-color: #dc3545;
   color: white;
 }
-
 .no:hover {
   background-color: #6e0913;
 }
@@ -66,17 +74,19 @@ button {
 }
 
 .congrats {
-  color: #0f150b;
+  color: #6b054e;
   font-weight: bolder;
   font-size: 40px;
   margin-top: 50px;
+  animation: fadeInZoom 2s ease-out;
 }
 
 .subtext {
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bolder;
   font-style: oblique;
   color: #020a27;
+  animation: fadeInUp 2s ease-in-out;
 }
 
 /* Floating Heart Animation */
@@ -86,9 +96,10 @@ button {
   height: 20px;
   background: red;
   transform: rotate(45deg);
-  animation: float 4s linear infinite;
+  animation: floatHeart 6s ease-in infinite;
+  top: 100vh;
+  z-index: 0;
 }
-
 .heart::before,
 .heart::after {
   content: "";
@@ -98,24 +109,56 @@ button {
   background: red;
   border-radius: 50%;
 }
-
 .heart::before {
   top: -10px;
   left: 0;
 }
-
 .heart::after {
   left: -10px;
   top: 0;
 }
 
-@keyframes float {
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatHeart {
   0% {
     transform: translateY(0) rotate(45deg);
     opacity: 1;
   }
   100% {
-    transform: translateY(-600px) rotate(45deg);
+    transform: translateY(-100vh) rotate(360deg);
     opacity: 0;
   }
 }

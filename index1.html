@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <title>Congratulations!</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Segoe+UI&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="hearts"></div>
+
     <h1 class="congrats">🎉 Congratulations! You said Yes! 💖</h1>
     <p class="subtext">Our love story begins now... 💑</p>
+    <h1>Thank You ❤️!</h1>
+    <p>Thank you for accepting my proposal! ❤️</p>
 
     <button onclick="goBack()" class="no">⬅️ Go Back</button>
 
-    <!-- Optional background music -->
+    <!-- Optional Sound -->
     <div style="margin-top: 40px">
       <iframe
         width="10%"
@@ -20,15 +28,23 @@
         frameborder="no"
         allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ilya-bokarev/lady-gaga-bruno-mars-die-with&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
-      >
-        >
-      </iframe>
+      ></iframe>
     </div>
 
     <script>
       function goBack() {
         window.location.href = "index.html";
       }
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 4 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }
+      setInterval(createHeart, 500);
     </script>
   </body>
 </html>

@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <title>Will You Be Mine?</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Segoe+UI&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>💌 Will You Be Mine?</h1>
+    <div class="hearts"></div>
+
+    <h1>
+      From now until forever,<br />
+      will you call my heart your home?
+    </h1>
+    <p>You make my world beautiful. Let’s spend forever together. 💍</p>
 
     <button class="yes" onclick="goToYes()">Yes ❤️</button>
     <button class="no" onclick="showNo()">No 😢</button>
@@ -19,9 +29,19 @@
       }
 
       function showNo() {
-        document.getElementById("message").innerHTML =
+        document.getElementById("message").innerText =
           "😢 No? Please think again... I'm waiting! 💔";
       }
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 4 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }
+      setInterval(createHeart, 500);
     </script>
   </body>
 </html>
