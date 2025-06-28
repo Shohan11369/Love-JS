@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Will You Be Mine?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>💌 Will You Be Mine?</h1>
+
+    <button class="yes" onclick="goToYes()">Yes ❤️</button>
+    <button class="no" onclick="showNo()">No 😢</button>
+
+    <div id="message" class="message"></div>
+
+    <script>
+      function goToYes() {
+        window.location.href = "index1.html";
+      }
+
+      function showNo() {
+        document.getElementById("message").innerHTML =
+          "😢 No? Please think again... I'm waiting! 💔";
+      }
+    </script>
+  </body>
+</html>

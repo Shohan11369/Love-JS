@@ -1,0 +1,121 @@
+body {
+  background: linear-gradient(
+      rgba(234, 196, 202, 0.6),
+      rgba(117, 116, 115, 0.6)
+    ),
+    url("images/bg-love.jpg");
+
+  background-size: 88%;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  /* padding-top: 80px;
+  padding-bottom: 100px; */
+  margin: 0;
+  overflow-x: hidden;
+  height: 90vh;
+}
+
+h1 {
+  font-size: 36px;
+  color: #ec0aa0;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 15px 35px;
+  font-size: 20px;
+  margin: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.yes {
+  background-color: #5b9bdb;
+  color: white;
+}
+
+.yes:hover {
+  background-color: #ade0b8;
+  color: black;
+}
+
+.no {
+  background-color: #dc3545;
+  color: white;
+}
+
+.no:hover {
+  background-color: #6e0913;
+}
+
+.message {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0f0303;
+  margin-top: 30px;
+}
+
+.congrats {
+  color: #0f150b;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.subtext {
+  font-size: 24px;
+  font-weight: bolder;
+  font-style: oblique;
+  color: #020a27;
+}
+
+/* Floating Heart Animation */
+.heart {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: float 4s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px) rotate(45deg);
+    opacity: 0;
+  }
+}
